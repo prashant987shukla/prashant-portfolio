@@ -110,7 +110,6 @@
       color: #121212;
     }
 
-    /* Custom cursor */
     body::before {
       content: '';
       position: fixed;
@@ -140,17 +139,14 @@
   <section>
     <h2>About Me</h2>
     <p>
-      <p>
-  Hi, I’m Prashant Shukla — a Social Media Manager who knows what it takes to grow and manage an online presence.
-  I’ve worked with creators who have more than <span style="color: yellow; font-weight: bold;">155K followers</span>, and I clearly understand how to boost engagement and grow accounts consistently.
-  Whether it’s planning content, editing videos, or improving engagement, I make sure everything works smoothly.
-  I specialize in creative video editing that makes your content stand out. From adding eye-catching visuals to making every second count,
-  I turn your raw videos into scroll-stopping content your audience loves.
-  I also help creators secure brand deals that match their style and audience. And the best part? I handle everything—from outreach to negotiation—so you don’t have to stress about anything.
-  My services include complete social media management. From creating content plans, scheduling posts, replying to comments, and tracking performance,
-  I manage it all. This way, you can focus fully on doing what you love—creating great content—while I take care of the rest.
-</p>
-
+      Hi, I’m Prashant Shukla — a Social Media Manager who knows what it takes to grow and manage an online presence.
+      I’ve worked with creators who have more than <span style="color: yellow; font-weight: bold;">155K followers</span>, and I clearly understand how to boost engagement and grow accounts consistently.
+      Whether it’s planning content, editing videos, or improving engagement, I make sure everything works smoothly.
+      I specialize in creative video editing that makes your content stand out. From adding eye-catching visuals to making every second count,
+      I turn your raw videos into scroll-stopping content your audience loves.
+      I also help creators secure brand deals that match their style and audience. And the best part? I handle everything—from outreach to negotiation—so you don’t have to stress about anything.
+      My services include complete social media management. From creating content plans, scheduling posts, replying to comments, and tracking performance,
+      I manage it all. This way, you can focus fully on doing what you love—creating great content—while I take care of the rest.
     </p>
   </section>
 
@@ -169,8 +165,44 @@
     <p>Instagram: <a href="https://www.instagram.com/prashant_shukla_987?igsh=aTY3YnIydzFxNjh5" target="_blank">@prashant_shukla_987</a></p>
   </section>
 
+  <section>
+    <h2>My Services</h2>
+    <ul>
+      <li>Full Social Media Management</li>
+      <li>Video Editing & Reels Creation</li>
+      <li>Instagram Growth Strategy</li>
+      <li>Brand Collaborations & Sponsorship Deals</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Testimonials</h2>
+    <blockquote>
+      "Prashant’s strategies boosted my Instagram growth like magic! Highly Recommended!"
+      <cite>– Harshvardan Shukla, Creator</cite>
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>Contact Form</h2>
+    <form action="mailto:shuklababu68@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required><br><br>
+      <input type="email" name="email" placeholder="Your Email" required><br><br>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea><br><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Achievements</h2>
+    <ul>
+      <li><strong>155K+</strong> Followers</li>
+      <li><strong>20+</strong> Projects Completed</li>
+      <li><strong>5+</strong> Brand Collaborations</li>
+    </ul>
+  </section>
+
   <script>
-    // Scroll animations
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -181,7 +213,6 @@
     }, { threshold: 0.3 });
     sections.forEach(section => observer.observe(section));
 
-    // Dark/Light mode toggle
     function toggleMode() {
       if (document.body.style.backgroundColor === 'white') {
         document.body.style.backgroundColor = '#121212';
@@ -192,7 +223,6 @@
       }
     }
 
-    // Custom cursor movement without moving page
     document.addEventListener('mousemove', e => {
       const cursor = document.querySelector('body::before');
       document.body.style.setProperty('--cursor-x', `${e.clientX}px`);
