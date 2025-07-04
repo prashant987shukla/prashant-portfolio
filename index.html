@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prashant Shukla - Modern Portfolio</title>
+  <title>Prashant Shukla - Advanced Portfolio</title>
   <style>
     body {
       margin: 0;
@@ -12,7 +12,6 @@
       color: #fff;
       font-family: 'Arial', sans-serif;
       overflow-x: hidden;
-      transition: background 0.5s ease;
     }
 
     header {
@@ -32,31 +31,13 @@
       border-right: 2px solid #0ff;
       white-space: nowrap;
       overflow: hidden;
-      width: 0;
-      animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent; }
+      width: 100%;
     }
 
     section {
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     img {
@@ -94,8 +75,9 @@
 
     button.toggle {
       background: #03dac6;
-      border: none;
       color: #000;
+      border: 2px solid #03dac6;
+      box-shadow: 0 0 10px #03dac6, 0 0 20px #03dac6 inset;
       padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
@@ -106,30 +88,50 @@
     }
 
     button.toggle:hover {
-      background: #0ff;
-      color: #121212;
+      background: transparent;
+      color: #03dac6;
+      box-shadow: 0 0 15px #0ff, 0 0 30px #0ff inset;
     }
 
-    body::before {
-      content: '';
+    .social-icons {
+      position: fixed;
+      top: 50%;
+      left: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transform: translateY(-50%);
+    }
+
+    .social-icons a {
+      color: #03dac6;
+      font-size: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    #progressBar {
       position: fixed;
       top: 0;
       left: 0;
-      width: 15px;
-      height: 15px;
-      background: #0ff;
-      border-radius: 50%;
-      pointer-events: none;
-      mix-blend-mode: difference;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s ease;
+      width: 0%;
+      height: 4px;
+      background: #03dac6;
+      z-index: 999;
+      transition: width 0.25s ease;
     }
   </style>
 </head>
 <body>
+
+  <div id="progressBar"></div>
+
   <header>
     <h1>Prashant Shukla</h1>
-    <div class="typing">Social Media Manager & Growth Expert</div>
+    <div class="typing"></div>
   </header>
 
   <button class="toggle" onclick="toggleMode()">Toggle Dark/Light Mode</button>
@@ -142,11 +144,6 @@
       Hi, I’m Prashant Shukla — a Social Media Manager who knows what it takes to grow and manage an online presence.
       I’ve worked with creators who have more than <span style="color: yellow; font-weight: bold;">155K followers</span>, and I clearly understand how to boost engagement and grow accounts consistently.
       Whether it’s planning content, editing videos, or improving engagement, I make sure everything works smoothly.
-      I specialize in creative video editing that makes your content stand out. From adding eye-catching visuals to making every second count,
-      I turn your raw videos into scroll-stopping content your audience loves.
-      I also help creators secure brand deals that match their style and audience. And the best part? I handle everything—from outreach to negotiation—so you don’t have to stress about anything.
-      My services include complete social media management. From creating content plans, scheduling posts, replying to comments, and tracking performance,
-      I manage it all. This way, you can focus fully on doing what you love—creating great content—while I take care of the rest.
     </p>
   </section>
 
@@ -165,54 +162,34 @@
     <p>Instagram: <a href="https://www.instagram.com/prashant_shukla_987?igsh=aTY3YnIydzFxNjh5" target="_blank">@prashant_shukla_987</a></p>
   </section>
 
-  <section>
-    <h2>My Services</h2>
-    <ul>
-      <li>Full Social Media Management</li>
-      <li>Video Editing & Reels Creation</li>
-      <li>Instagram Growth Strategy</li>
-      <li>Brand Collaborations & Sponsorship Deals</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Testimonials</h2>
-    <blockquote>
-      "Prashant’s strategies boosted my Instagram growth like magic! Highly Recommended!"
-      <cite>– Harshvardan Shukla, Creator</cite>
-    </blockquote>
-  </section>
-
-  <section>
-    <h2>Contact Form</h2>
-    <form action="mailto:shuklababu68@gmail.com" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required><br><br>
-      <input type="email" name="email" placeholder="Your Email" required><br><br>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea><br><br>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <section>
-    <h2>Achievements</h2>
-    <ul>
-      <li><strong>155K+</strong> Followers</li>
-      <li><strong>20+</strong> Projects Completed</li>
-      <li><strong>5+</strong> Brand Collaborations</li>
-    </ul>
-  </section>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/prashant_shukla_987" target="_blank">📷</a>
+    <a href="mailto:shuklababu68@gmail.com">✉️</a>
+    <a href="tel:+919335047840">📞</a>
+  </div>
 
   <script>
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.3 });
-    sections.forEach(section => observer.observe(section));
+    // Typing Animation Loop
+    const texts = ["Social Media Manager", "Video Editor", "Growth Expert"];
+    let count = 0, index = 0, currentText = "", letter = "";
 
+    (function type() {
+      if (count === texts.length) count = 0;
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+      document.querySelector(".typing").textContent = letter;
+      if (letter.length === currentText.length) {
+        setTimeout(() => {
+          index = 0;
+          count++;
+          setTimeout(type, 500);
+        }, 1500);
+      } else {
+        setTimeout(type, 200);
+      }
+    })();
+
+    // Dark/Light Mode Toggle
     function toggleMode() {
       if (document.body.style.backgroundColor === 'white') {
         document.body.style.backgroundColor = '#121212';
@@ -223,11 +200,14 @@
       }
     }
 
-    document.addEventListener('mousemove', e => {
-      const cursor = document.querySelector('body::before');
-      document.body.style.setProperty('--cursor-x', `${e.clientX}px`);
-      document.body.style.setProperty('--cursor-y', `${e.clientY}px`);
+    // Scroll Progress Bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
     });
   </script>
+
 </body>
 </html>
