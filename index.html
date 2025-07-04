@@ -1,145 +1,177 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prashant Shukla - Portfolio</title>
+  <title>Prashant Shukla - Modern Portfolio</title>
   <style>
     body {
       margin: 0;
       background-color: #121212;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+      transition: background 0.5s ease;
     }
+
     header {
-      padding: 20px;
       text-align: center;
-      background-color: #1f1f1f;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      padding: 30px 20px;
     }
+
     header h1 {
-      margin: 0;
-      font-size: 28px;
-      letter-spacing: 1px;
+      font-size: 2.5rem;
+      text-shadow: 0 0 15px #0ff;
     }
+
+    .typing {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      border-right: 2px solid #0ff;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
     section {
-      padding: 50px 20px;
+      padding: 40px 20px;
       max-width: 900px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
     }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     img {
-      width: 180px;
-      height: 180px;
+      display: block;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      object-fit: cover;
-      margin: 20px 0;
-      border: 3px solid #ffffff;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      transition: transform 0.5s ease;
+      margin: 20px auto;
+      border: 3px solid #03dac6;
+      box-shadow: 0 0 25px #03dac6;
     }
-    img:hover {
-      transform: scale(1.05);
-    }
-    h2 {
-      border-bottom: 2px solid #ffffff;
-      padding-bottom: 8px;
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
+
     a {
       color: #03dac6;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
-    .skills span {
-      display: inline-block;
+
+    a:hover {
+      color: #fff;
+    }
+
+    button.toggle {
       background: #03dac6;
+      border: none;
       color: #000;
-      padding: 5px 10px;
-      margin: 5px;
+      padding: 10px 20px;
       border-radius: 5px;
-      font-weight: bold;
-      font-size: 14px;
-    }
-    .contact a {
+      cursor: pointer;
+      margin: 20px auto;
       display: block;
-      margin: 10px 0;
-      font-size: 16px;
+      font-weight: bold;
+      transition: background 0.3s ease, color 0.3s ease;
     }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+
+    button.toggle:hover {
+      background: #0ff;
+      color: #121212;
     }
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
+
+    /* Custom cursor */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      background: #0ff;
+      border-radius: 50%;
+      pointer-events: none;
+      mix-blend-mode: difference;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Prashant Shukla</h1>
+    <div class="typing">Social Media Manager & Growth Expert</div>
   </header>
 
-  <section class="fade-in">
-    <img src="1000059719.jpg" alt="Prashant Shukla">
+  <button class="toggle" onclick="toggleMode()">Toggle Dark/Light Mode</button>
+
+  <img src="1000059719.jpg" alt="Prashant Shukla">
+
+  <section>
     <h2>About Me</h2>
-    <p>
-      Hi, I’m Prashant Shukla — a Social Media Manager who knows what it takes to grow and manage an online presence.
-      I’ve worked with creators who have more than 155K followers, and I clearly understand how to boost engagement and grow accounts consistently.
-      Whether it’s planning content, editing videos, or improving engagement, I make sure everything works smoothly.
-      I specialize in creative video editing that makes your content stand out. From adding eye-catching visuals to making every second count,
-      I turn your raw videos into scroll-stopping content your audience loves.
-      I also help creators secure brand deals that match their style and audience. And the best part? I handle everything—from outreach to negotiation—so you don’t have to stress about anything.
-      My services include complete social media management. From creating content plans, scheduling posts, replying to comments, and tracking performance,
-      I manage it all. This way, you can focus fully on doing what you love—creating great content—while I take care of the rest.
-    </p>
+    <p>I help creators grow their social media presence with strategic planning, creative video editing, and audience engagement. I have worked with influencers with over 155K followers, helping them grow and manage their accounts effectively. From editing to brand deals, I handle it all!</p>
   </section>
 
-  <section class="fade-in">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span>Video Editing</span>
-      <span>Social Media Management</span>
-      <span>Content Strategy</span>
-      <span>Brand Collaboration</span>
-    </div>
-  </section>
-
-  <section class="fade-in">
+  <section>
     <h2>Projects</h2>
     <ul>
-      <li>
-        <strong>YouTube Edit Video:</strong> <a href="https://drive.google.com/file/d/1_poiNzbChSgJo5AKlcJ4LJiVnkmpl5l5/view?usp=drive_link" target="_blank">Watch Video</a>
-      </li>
-      <li>
-        <strong>Growth Project:</strong> <a href="https://www.instagram.com/harshvardanshukla?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Visit Instagram</a>
-      </li>
+      <li><strong>YouTube Edit Video:</strong> <a href="https://drive.google.com/file/d/1_poiNzbChSgJo5AKlcJ4LJiVnkmpl5l5/view?usp=drive_link" target="_blank">Watch Video</a></li>
+      <li><strong>Growth Project:</strong> <a href="https://www.instagram.com/harshvardanshukla?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram Project</a></li>
     </ul>
   </section>
 
-  <section class="fade-in contact">
+  <section>
     <h2>Contact</h2>
-    <a href="mailto:shuklababu68@gmail.com">shuklababu68@gmail.com</a>
-    <a href="tel:+919335047840">+91 9335047840</a>
-    <a href="https://www.instagram.com/prashant_shukla_987?igsh=aTY3YnIydzFxNjh5" target="_blank">Instagram Profile</a>
+    <p>Email: <a href="mailto:shuklababu68@gmail.com">shuklababu68@gmail.com</a></p>
+    <p>Phone: <a href="tel:+919335047840">+91 9335047840</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/prashant_shukla_987?igsh=aTY3YnIydzFxNjh5" target="_blank">@prashant_shukla_987</a></p>
   </section>
 
   <script>
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
+    // Scroll animations
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('show');
+          entry.target.classList.add('visible');
         }
       });
     }, { threshold: 0.3 });
+    sections.forEach(section => observer.observe(section));
 
-    fadeElements.forEach(el => observer.observe(el));
+    // Dark/Light mode toggle
+    function toggleMode() {
+      if (document.body.style.backgroundColor === 'white') {
+        document.body.style.backgroundColor = '#121212';
+        document.body.style.color = '#fff';
+      } else {
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = '#000';
+      }
+    }
+
+    // Custom cursor movement
+    document.addEventListener('mousemove', e => {
+      document.body.style.setProperty('--x', `${e.clientX}px`);
+      document.body.style.setProperty('--y', `${e.clientY}px`);
+      document.body.style.setProperty('transform', `translate(${e.clientX}px, ${e.clientY}px)`);
+    });
   </script>
 </body>
 </html>
