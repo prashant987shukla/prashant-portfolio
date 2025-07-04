@@ -166,11 +166,11 @@
       }
     }
 
-    // Custom cursor movement
+    // Custom cursor movement without moving page
     document.addEventListener('mousemove', e => {
-      document.body.style.setProperty('--x', `${e.clientX}px`);
-      document.body.style.setProperty('--y', `${e.clientY}px`);
-      document.body.style.setProperty('transform', `translate(${e.clientX}px, ${e.clientY}px)`);
+      const cursor = document.querySelector('body::before');
+      document.body.style.setProperty('--cursor-x', `${e.clientX}px`);
+      document.body.style.setProperty('--cursor-y', `${e.clientY}px`);
     });
   </script>
 </body>
