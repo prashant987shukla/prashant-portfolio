@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prashant Shukla - Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      background-color: #1f1f1f;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 20px 0;
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      transition: transform 0.5s ease;
+    }
+    img:hover {
+      transform: scale(1.05);
+    }
+    h2 {
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    a {
+      color: #03dac6;
+      text-decoration: none;
+    }
+    .skills span {
+      display: inline-block;
+      background: #03dac6;
+      color: #000;
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .contact a {
+      display: block;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Prashant Shukla</h1>
+  </header>
+
+  <section class="fade-in">
+    <img src="1000059719.jpg" alt="Prashant Shukla">
+    <h2>About Me</h2>
+    <p>
+      Hi, I’m Prashant Shukla — a Social Media Manager who knows what it takes to grow and manage an online presence.
+      I’ve worked with creators who have more than 155K followers, and I clearly understand how to boost engagement and grow accounts consistently.
+      Whether it’s planning content, editing videos, or improving engagement, I make sure everything works smoothly.
+      I specialize in creative video editing that makes your content stand out. From adding eye-catching visuals to making every second count,
+      I turn your raw videos into scroll-stopping content your audience loves.
+      I also help creators secure brand deals that match their style and audience. And the best part? I handle everything—from outreach to negotiation—so you don’t have to stress about anything.
+      My services include complete social media management. From creating content plans, scheduling posts, replying to comments, and tracking performance,
+      I manage it all. This way, you can focus fully on doing what you love—creating great content—while I take care of the rest.
+    </p>
+  </section>
+
+  <section class="fade-in">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Video Editing</span>
+      <span>Social Media Management</span>
+      <span>Content Strategy</span>
+      <span>Brand Collaboration</span>
+    </div>
+  </section>
+
+  <section class="fade-in">
+    <h2>Projects</h2>
+    <ul>
+      <li>
+        <strong>YouTube Edit Video:</strong> <a href="https://drive.google.com/file/d/1_poiNzbChSgJo5AKlcJ4LJiVnkmpl5l5/view?usp=drive_link" target="_blank">Watch Video</a>
+      </li>
+      <li>
+        <strong>Growth Project:</strong> <a href="https://www.instagram.com/harshvardanshukla?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Visit Instagram</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="fade-in contact">
+    <h2>Contact</h2>
+    <a href="mailto:shuklababu68@gmail.com">shuklababu68@gmail.com</a>
+    <a href="tel:+919335047840">+91 9335047840</a>
+    <a href="https://www.instagram.com/prashant_shukla_987?igsh=aTY3YnIydzFxNjh5" target="_blank">Instagram Profile</a>
+  </section>
+
+  <script>
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    fadeElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
